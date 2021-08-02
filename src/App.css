@@ -33,3 +33,11 @@ body{
     width: 4rem;
     padding: 1rem;
 }
+
+.inputs{
+    border: 1px solid transparent;
+    width: 100;
+    padding: 1rem;
+    outline: none;
+
+}

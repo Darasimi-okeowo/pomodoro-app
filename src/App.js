@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
-
+  const [input, setInput] = useState('')
   const [seconds, setSeconds] = useState(5)
   const [minutes, setMinutes] = useState(0)
   const [displayMessage, setDisplayMessage] = useState(false)
@@ -38,18 +38,27 @@ function App() {
       prev - 1
     )
   }
+  const handleInput = (e) => {
+    setInput(e.target.value)
+  }
+  const handleSubmit = () => {
+    if (input === '') return
+    setMinutes(+input)
+  }
 
   const timerMinute = minutes < 10 ? `0${minutes}` : minutes;
   const timerSecond = seconds < 10 ? `0${seconds}` : seconds;
 
   return (
     <div className="pomodoro">
+      <input className='inputs' type='number' name="input" onChange={handleInput} value={input} placeholder='enter the amount of minutes3'/>
+      <button onClick={handleSubmit}>Set Minute</button>
       {displayMessage && <h1 className='message'>Break time. your next session starts in:</h1>}
+        <p className='timer'>{timerMinute}:{timerSecond}</p>
       <div className='main'>
-        <p>Increase timer below</p>
+        <p>Increase timer above</p>
         <button className="buttons" onClick={handleAdd}>+</button>
         <button className="buttons" onClick={handleSubtract}>-</button>
-        <p className='timer'>{timerMinute}:{timerSecond}</p>
       </div>
     </div>
   );
