@@ -14,3 +14,22 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
+.main{
+    align-items: center;
+}
+
+.message{
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.timer{
+    font-size: xx-large;
+    font-weight: 200;
+}
+
+.buttons{
+    width: 4rem;
+    padding: 1rem;
+}
